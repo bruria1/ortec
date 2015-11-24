@@ -1,0 +1,155 @@
+@mixin res($media) {
+  @if $media == small {
+    @media (max-width: 480px) { @content; }
+  }
+  @else if $media == medium {
+    @media (min-width: 481px) and (max-width: 767px) { @content; }
+  }
+  @else if $media == m-large {
+    @media  (max-width: 1289px){ @content; }
+  }
+  @if $media == small-medium {
+    @media (max-width: 767px) { @content; }
+  }
+  @if $media == menu {
+    @media (max-width: 925px) { @content; }
+  }
+}
+
+a, a:link, a:visited{
+  text-decoration: none;
+  outline: 0;
+}
+
+textarea:focus, input:focus{
+    outline: 0;
+}
+
+*:focus {
+    outline: 0;
+    outline-style:none;
+    outline-width:0;
+}
+
+
+/***********responsive menu  ****************/
+
+body.menu-open #page{
+  opacity: 0.7;
+}
+
+@include res(menu){
+  #navigation{
+    padding: 0;
+  }
+  #logo{
+    margin-top: 16px;
+  }
+  #main-menu{
+    opacity: 0;
+    background-color: transparent;
+    margin: 19px auto 0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    height: auto;
+    padding: 0;
+    li{
+      background:none;
+      width: 100%;
+      padding: 0px!important;
+      height: 43px;
+    }
+    a{
+      width: 100%;
+      border:none;
+      display: block;
+      padding: 10px!important;
+      box-sizing:border-box;
+      text-align: center;
+      opacity: 0;
+      color: #fff;
+    }
+    .first a{
+      opacity: 1;
+    }
+    a:hover{
+      border: none;
+      padding: 10px!important;
+    }
+    a.active{
+      border: none;
+      padding: 10px!important;
+    }
+  }
+  .menu-close #main-menu{
+    width: 0;
+    padding: 0;
+  }
+  .menu-open #main-menu{
+    width: 100%;
+    opacity: 1;
+    background-color: #444;
+  }
+}
+
+#main-menu{
+  @include res(small){
+    margin-top: 13px;
+  }
+  @include res(medium){
+    margin-top: 12px;
+  }
+}
+.mobile-menu{
+  float: right;
+  display: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  height: 16px;
+  padding: 8px 5px 5px 0px;
+  width: 25px;
+  margin-top: 23px;
+  @include res(menu){
+    display: block;
+  }
+  @include res(small){
+    margin-top: 10px;
+  }
+  @include res(medium){
+    margin-top: 10px;
+  }
+  span{
+    width: 30px;
+    height: 4px;
+    background-color: #000;
+    margin-bottom: 5px;
+    display: block;
+  }
+}
+
+.icon-bar{
+  transition: all 1s;
+  -webkit-transition: all 1s;
+}
+
+.menu-open .mobile-menu{
+  span{
+    margin: 0;
+  }
+  .bar1{
+    transform: rotate(45deg);
+    -ms-transform: rotate(45deg); 
+    -webkit-transform: rotate(45deg); 
+    margin-top: 12px;
+  }
+  .bar2{
+    display: none;
+  }
+  .bar3{
+    margin-top: -4px;
+    transform: rotate(135deg);
+    -ms-transform: rotate(135deg); 
+    -webkit-transform: rotate(135deg); 
+  }
+}
