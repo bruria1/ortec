@@ -14,7 +14,11 @@
     <?php if ($logo): ?>
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
     <?php endif; ?>
-
+          <div class="mobile-menu close">
+            <span class="icon-bar bar1"></span>
+            <span class="icon-bar bar2"></span>
+            <span class="icon-bar bar3"></span>
+          </div>
     <div id="navigation">
 
       <?php if ($main_menu): ?>
@@ -73,11 +77,7 @@
     <?php endif; ?>
 
     <?php print render($page['header']); ?>
-          <div class="mobile-menu close">
-            <span class="icon-bar bar1"></span>
-            <span class="icon-bar bar2"></span>
-            <span class="icon-bar bar3"></span>
-          </div>
+
   </header>
 <div id="page">
 
@@ -124,11 +124,13 @@
   <div class="wrapper-footer">
     <?php print render($page['footer']); ?>
   </div>
+</div>
   <?php
   if (drupal_is_front_page()) {?>
   <iframe allowfullscreen="" frameborder="0" height="450" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13505.393540614668!2d34.8786349!3d32.1948419!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb472745b8b181e01!2z15DXldeo15jXpyDXqdeZ15XXldenINem15nXldeTINeV15DXodek16fXlCDXkdeiItee!5e0!3m2!1siw!2sil!4v1449560511525" style="border:0" width="100%"></iframe>
   <?php }
   ?>
-</div>
-
-<?php print render($page['bottom']); ?>
+  
+  <div class="wrapper-bottom">
+    <?php print render($page['bottom']); ?>
+  </div>

@@ -1,19 +1,16 @@
 @import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
 
 @mixin res($media) {
-  @if $media == small {
+  @if $media == s {
     @media (max-width: 480px) { @content; }
   }
-  @else if $media == medium {
+  @else if $media == m {
     @media (min-width: 481px) and (max-width: 767px) { @content; }
   }
-  @else if $media == m-large {
-    @media  (max-width: 1289px){ @content; }
+  @else if $media == l {
+    @media  (min-width: 768px) and (max-width: 1100px){ @content; }
   }
-  @if $media == small-medium {
-    @media (max-width: 767px) { @content; }
-  }
-  @if $media == menu {
+  @if $media == s-m {
     @media (max-width: 767px) { @content; }
   }
 }
@@ -23,6 +20,8 @@
 
 $blue: #27b8e8;
 $default: #404040;
+$dark-blue: #3a92d7;
+
 
 /********  mixin *********/
 
@@ -88,6 +87,13 @@ body{
 #block-locale-language{
   float: left;
   margin-top: 6px;
+  @include res(l){
+    margin-left: 10px;
+    margin-top: -20px;
+  }
+  @include res(s-m){
+    margin-top: -19px;
+  }
   li{
     list-style-type: none;
     &.active{
@@ -108,12 +114,21 @@ body{
 #header{
   @include width;
   padding: 56px 3% 40px;
+  @include res(s-m){
+    padding: 10px 3%;
+  }
 }
 
 #block-search-form{
   float: left;
   position: relative;
   margin-top: 5px;
+  @include res(s-m){
+    display: none;
+  }
+  @include res(l){
+    margin-top: -20px;
+  }
   .in-field-labels-processed{
     right: 5px;
     top: -1px;
@@ -148,6 +163,11 @@ body{
   float: right;
   margin-top: 8px;
   margin-right: 6%;
+  @include res(l){
+    float: left;
+    margin-top: -20px;
+    margin-right: 0;
+  }
   a{
     font-weight: bold;
     color: $default;
@@ -160,37 +180,53 @@ body{
   }
   li{
     padding: 0 0 0 20px !important;
+    @inc
+  }
+  li.last{
+    padding: 0!important;
   }
 }
 
+.region-header{
+  clear: none;
+  @include res(l){
+    clear: both;
+  }
+  @include res(s-m){
+    clear: both;
+  }
+}
 #navigation{
     height: auto;
     position: relative;
+    padding: 0;
 }
 
-/***********responsive menu  ****************/
+/*********** responsive menu  ****************/
 
 body.menu-open #page{
   opacity: 0.7;
 }
 
-@include res(menu){
-  #navigation{
-    padding: 0;
-  }
+@include res(s-m){
   #logo{
     margin-top: 16px;
   }
-  #main-menu{
-    opacity: 0;
-    background-color: transparent;
-    margin: 19px auto 0;
+  #navigation{
+    left: -100%;
+    position: fixed;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
-    height: auto;
-    padding: 0;
+    z-index: 200;
+    top: 86px;
+    width: 100%;
+  }
+  #main-menu{
+    margin: 0;
+    width: 100%;
+    background-color: #404040;
+    opacity: 0.8;
     li{
-      background:none;
       width: 100%;
       padding: 0px!important;
       height: 43px;
@@ -208,52 +244,26 @@ body.menu-open #page{
     .first a{
       opacity: 1;
     }
-    a:hover{
+    a:hover, a.active{
       border: none;
-      padding: 10px!important;
-    }
-    a.active{
-      border: none;
-      padding: 10px!important;
     }
   }
-  .menu-close #main-menu{
-    width: 0;
-    padding: 0;
-  }
-  .menu-open #main-menu{
-    width: 100%;
-    opacity: 1;
-    background-color: #444;
+  .menu-open #navigation{
+    left: 0;
   }
 }
 
-#main-menu{
-  @include res(small){
-    margin-top: 13px;
-  }
-  @include res(medium){
-    margin-top: 12px;
-  }
-}
 .mobile-menu{
-  float: right;
+  float: left;
   display: none;
   border: none;
   background-color: transparent;
   cursor: pointer;
   height: 16px;
   padding: 8px 5px 5px 0px;
-  width: 25px;
-  margin-top: 23px;
-  @include res(menu){
+  @include res(s-m){
+    margin-top: 5px;
     display: block;
-  }
-  @include res(small){
-    margin-top: 10px;
-  }
-  @include res(medium){
-    margin-top: 10px;
   }
   span{
     width: 30px;
@@ -304,6 +314,9 @@ body.menu-open #page{
   article{
     background-color: $blue;
     padding-bottom: 70px;
+    @include res(s-m){
+      padding-bottom: 15px;
+    }
     .field-name-body{
       @include width;
     }
@@ -323,6 +336,9 @@ body.menu-open #page{
   background-color: $blue;
   overflow: hidden;
   padding-top: 75px;
+  @include res(s-m){
+    padding-top: 15px;
+  }
   .view{
     @include width;
   }
@@ -334,19 +350,41 @@ body.menu-open #page{
     padding: 0 24px;
     margin-bottom: 60px;
     box-sizing: border-box;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    border-radius: 50%;
+    @include res(l){
+      padding: 0;
+    }
+    @include res(s-m){
+      width: 100%;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      flex-direction: row-reverse;
+      margin-bottom: 20px;
+    }
+    &:hover{
+        opacity: 0.6;
+    }
   }
   .views-row:nth-child(3n){
     margin-left: 0;
+  }
+  .views-field-field-img{
+    @include res(s-m){
+      float: right;
+      width: 30%;
+    }
+    a{
+      border-radius: 50%;
+      display: block;
+    }
   }
   img{
     border-radius: 50%;
     margin: 0 auto;
     display: block;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    &:hover{
-      background-color: rgba(256, 256, 256, 0.7);
-    }
   }
   .views-field-title{
     position: absolute;
@@ -358,6 +396,17 @@ body.menu-open #page{
     padding: 0 40px;
     box-sizing: border-box;
     right: 0;
+    @include res(l){
+      padding:  0 8px;
+      font-size: 1.3em;
+    }
+    @include res(s-m){
+      position: relative;
+      float: left;
+      width: 68%;
+      font-size: 1.2em;
+      padding: 0 2% 0 0;
+    }
     a{
       text-shadow: 1px 2px 9.4px #000000;
       color: #fff;
@@ -369,6 +418,9 @@ body.menu-open #page{
   background-color: #fcfcfc;
   padding: 100px 0;
   overflow: hidden;
+  @include res(s-m){
+    padding: 15px 0;
+  }
   .view, .block-title{
     @include width;
   }
@@ -386,6 +438,16 @@ body.menu-open #page{
     position: relative;
     margin-bottom: 60px;
     box-sizing: border-box;
+    @include res(s-m){
+      width: 48%;
+      margin-bottom: 20px;
+      &.views-row-odd{
+        margin-left: 4%!important;
+      }
+      &.views-row-even{
+        margin-left: 0!important;
+      }
+    }
   }
   .views-row:nth-child(3n){
     margin-left: 0;
@@ -415,6 +477,12 @@ body.menu-open #page{
     opacity: 0;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;
+    @include res(l){
+      line-height: 1.2em;
+    }
+    .field-content{
+      overflow: hidden;
+    }
     a{
       color: $default;
       .second-title{
@@ -425,12 +493,18 @@ body.menu-open #page{
   }
   .views-row:hover .views-field-field-second-title{
     opacity: 1;
+    @include res(s-m){
+      opacity: 0;
+    }
   }
 }
 
 #block-views-about-home-page-block{
   padding: 80px 0 150px;
   background-color: $blue;
+  @include res(s-m){
+    padding: 15px 0;
+  }
   .view{
     @include width;
     color: #fff;
@@ -454,31 +528,160 @@ body.menu-open #page{
 .wrapper-footer{
   background-color: #f3f5f5;
   padding: 180px 0;
+  @include res(s-m){
+    padding: 15px 0;
+  }
   h2{
-    font-size: 2.5em;
+    font-size: 36px;
   }
   #footer{
     @include width;
   }
-  #block-block-2{
-    width: 50%;
+}
+
+#block-block-2{
+    width: 48%;
+    max-width: 415px;
     float: right;
     font-size: 1.5em;
+    @include res(l){
+      font-size: 1.2em;
+    }
     @include res(s-m){
       width: 100%;
+    }
+    a{
+      color: $default;
     }
     .label{
       font-weight: bold;
-      background: url("../images/contact-footer.png") no-repeat scroll right center transparent;
+      background: url("../images/contact-footer.png") no-repeat scroll right 1px transparent;
       float: right;
       margin-left: 5px;
+      padding-right: 43px;
+      height: 32px;
+      clear: right;
     }
-  }
-  #block-webform-client-block-38{
-    width: 50%;
-    float: right;
+    .address .label{
+      float: none;
+    }
+    .address .content{
+      padding-right: 43px;
+    }
+    .phone .label{
+      background-position: right -35px;
+    }
+    .fax .label{
+      background-position: right -75px;
+    }
+    .email .label{
+      background-position: right -112px;
+    }
+    .phone, .fax, .email{
+      .label{
+        margin-top: 10px;
+      }
+    }
+    p{
+      margin: 0;
+    }
+    .left-side{
+      float: left;
+      margin-top: 11px;
+    }
+}
+
+#block-webform-client-block-38{
+    width: 48%;
+    float: left;
     @include res(s-m){
       width: 100%;
+      margin-top: 30px;
     }    
-  }
+    h2{
+      background: url("../images/plus.png") no-repeat scroll right 26px transparent;
+      padding-right: 44px;
+    }
+    input.form-text{
+      height: 45px;
+      border: none;
+      border-radius: 5px;
+      padding: 0px 75px 0 0;
+      background: url("../images/form-icons.png") no-repeat scroll right -1px #fff;
+      font-size: 1.5em;
+    }
+    label{
+      font-size: 1.5em;
+      height: 35px;
+      padding: 10px 75px 0 0;
+    }
+    #webform-component-phone{
+      input{
+        background-position: right -72px;
+      }
+    }
+    #webform-component-email{
+      input{
+        background-position: right -142px;
+      }
+    }
+    .form-submit{
+      height: 50px;
+      float: left;
+      font-size: 1.714em;
+      color: #fff;
+      background-color: $dark-blue;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 5px;
+    }
+    .form-required{
+      display: none;
+    }
 }
+
+.wrapper-bottom{
+    background-color: #d9dcdc;
+    overflow: hidden;
+    font-size: 1.5em;
+    margin-top: -7px;
+    @include res(l){
+      font-size: 1.2em;
+    }
+    @include res(s-m){
+      font-size: 1em;
+      p{
+        margin-bottom: 0;
+      }
+      .block{
+        width: 100%;
+        text-align: center;
+        ul{
+          text-align: center;
+        }
+      }
+    }
+    a{
+      color: $default;
+    }
+    .region-bottom{
+      @include width;
+    }
+    #block-block-1{
+      float: right;
+    }
+    #block-system-main-menu{
+      float: left;
+      ul{
+        padding: 0;
+      }
+      li{
+        list-style-type: none;
+        display: inline;
+        a.active, a:hover{
+          color: $blue;
+        }
+      }
+    }
+}
+
