@@ -1,3 +1,5 @@
+@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
+
 @mixin res($media) {
   @if $media == small {
     @media (max-width: 480px) { @content; }
@@ -12,13 +14,32 @@
     @media (max-width: 767px) { @content; }
   }
   @if $media == menu {
-    @media (max-width: 925px) { @content; }
+    @media (max-width: 767px) { @content; }
   }
 }
+
+
+/******   colors  *********/
+
+$blue: #27b8e8;
+$default: #404040;
+
+/********  mixin *********/
+
+@mixin width(){
+  width: 1210px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3%;
+  box-sizing: border-box;
+}
+
+
 
 a, a:link, a:visited{
   text-decoration: none;
   outline: 0;
+  color: $blue;
 }
 
 textarea:focus, input:focus{
@@ -31,6 +52,121 @@ textarea:focus, input:focus{
     outline-width:0;
 }
 
+body{
+    font-family: 'Open Sans Hebrew', arial;  
+    font-size: 14px;
+}
+
+.block {
+    margin-bottom: 0em;
+}
+
+#page{
+  width: 100%;
+  max-width: 100%;
+}
+
+#content, #main{
+  padding: 0;
+}
+
+.wrapper-width{
+  @include width;
+}
+
+.phone a{
+    pointer-events: none;
+    cursor: default; 
+    color: $default;
+    @include res(s-m){
+      pointer-events: auto;
+      cursor: pointer;    
+    }
+}
+/**********  header  *********/
+
+#block-locale-language{
+  float: left;
+  margin-top: 6px;
+  li{
+    list-style-type: none;
+    &.active{
+      display: none;
+    }
+  }
+  ul{
+    padding: 0;
+    margin: 0;
+    a{
+      color: $default;
+      font-size: 1.2em;
+      padding-right: 30px;
+    }
+  }
+}
+
+#header{
+  @include width;
+  padding: 56px 3% 40px;
+}
+
+#block-search-form{
+  float: left;
+  position: relative;
+  margin-top: 5px;
+  .in-field-labels-processed{
+    right: 5px;
+    top: -1px;
+  }
+  label{
+    color: #808080;
+    padding-right: 10px;
+  }
+  .form-text{
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #808080;
+    width: 150px;
+    padding-right: 10px;
+  }
+  .form-submit{
+      background: url("../images/search-icon.png") no-repeat scroll center center transparent;
+      border: medium none;
+      height: 15px;
+      left: 6px;
+      top:7px;
+      position: absolute;
+      text-indent: -9999px;
+      width: 19px;
+  }
+}
+
+/**********  menu  *********/
+
+#main-menu{
+  display: inline-block;
+  float: right;
+  margin-top: 8px;
+  margin-right: 6%;
+  a{
+    font-weight: bold;
+    color: $default;
+    padding: 0 10px;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+  }
+  a.active, a:hover{
+    border-top: 6px solid $blue;
+  }
+  li{
+    padding: 0 0 0 20px !important;
+  }
+}
+
+#navigation{
+    height: auto;
+    position: relative;
+}
 
 /***********responsive menu  ****************/
 
@@ -151,5 +287,198 @@ body.menu-open #page{
     transform: rotate(135deg);
     -ms-transform: rotate(135deg); 
     -webkit-transform: rotate(135deg); 
+  }
+}
+
+
+/*********** front  ****************/
+
+.front{
+  #page-title{
+    display: none;
+  }
+  #content .wrapper-width{
+    width: 100%;
+    padding: 0;
+  }
+  article{
+    background-color: $blue;
+    padding-bottom: 70px;
+    .field-name-body{
+      @include width;
+    }
+    h1, h2{
+      margin: 0;
+      text-align: center;
+      color: #fff;
+      font-size: 2.5em;
+    }
+    h2{
+      font-weight: normal;
+    }
+  }
+}
+
+#block-views-hp-gallery-block{
+  background-color: $blue;
+  overflow: hidden;
+  padding-top: 75px;
+  .view{
+    @include width;
+  }
+  .views-row{
+    width: 30%;
+    float: right;
+    margin-left: 5%;
+    position: relative;
+    padding: 0 24px;
+    margin-bottom: 60px;
+    box-sizing: border-box;
+  }
+  .views-row:nth-child(3n){
+    margin-left: 0;
+  }
+  img{
+    border-radius: 50%;
+    margin: 0 auto;
+    display: block;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    &:hover{
+      background-color: rgba(256, 256, 256, 0.7);
+    }
+  }
+  .views-field-title{
+    position: absolute;
+    top: 43%;
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 1.714em;
+    font-weight: bold;
+    text-align: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+    right: 0;
+    a{
+      text-shadow: 1px 2px 9.4px #000000;
+      color: #fff;
+    }
+  }
+}
+
+#block-views-manufacturies-block{
+  background-color: #fcfcfc;
+  padding: 100px 0;
+  overflow: hidden;
+  .view, .block-title{
+    @include width;
+  }
+  .block-title{
+    font-size: 3em;
+    text-align: center;
+    background: url("../images/manufacturers.png") no-repeat scroll center top transparent;
+    padding-top: 170px;
+    padding-bottom: 50px;
+  }
+  .views-row{
+    width: 30%;
+    float: right;
+    margin-left: 5%;
+    position: relative;
+    margin-bottom: 60px;
+    box-sizing: border-box;
+  }
+  .views-row:nth-child(3n){
+    margin-left: 0;
+  }
+  .views-field-field-logo{
+    border: 1px solid rgba(58, 146, 215, 50);
+    border-radius: 5px 5px 0 0;
+    padding: 10px;
+  }
+  .views-field-title{
+    text-align: left;
+    font-weight: bold;
+    font-size: 1.5em;
+    padding-left: 10px;
+    padding-top: 10px;
+    a{
+      color: $default;
+    }
+  }
+  .views-field-field-second-title{
+    position: absolute;
+    overflow: hidden;
+    padding: 10px;
+    background-color: rgba(239, 239, 239, 0.8);
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #f2f2f2;
+    opacity: 0;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    a{
+      color: $default;
+      .second-title{
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .views-row:hover .views-field-field-second-title{
+    opacity: 1;
+  }
+}
+
+#block-views-about-home-page-block{
+  padding: 80px 0 150px;
+  background-color: $blue;
+  .view{
+    @include width;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    max-width: 375px;
+  }
+  .views-field-title{
+    font-size: 3em;
+    text-align: center;
+    background: url("../images/about.png") no-repeat scroll center top transparent;
+    padding-top: 130px;
+    padding-bottom: 40px;
+  }
+  .views-field-body{
+    line-height: 1.3em;
+  }
+}
+
+/**********  footer  ***********/
+.wrapper-footer{
+  background-color: #f3f5f5;
+  padding: 180px 0;
+  h2{
+    font-size: 2.5em;
+  }
+  #footer{
+    @include width;
+  }
+  #block-block-2{
+    width: 50%;
+    float: right;
+    font-size: 1.5em;
+    @include res(s-m){
+      width: 100%;
+    }
+    .label{
+      font-weight: bold;
+      background: url("../images/contact-footer.png") no-repeat scroll right center transparent;
+      float: right;
+      margin-left: 5px;
+    }
+  }
+  #block-webform-client-block-38{
+    width: 50%;
+    float: right;
+    @include res(s-m){
+      width: 100%;
+    }    
   }
 }

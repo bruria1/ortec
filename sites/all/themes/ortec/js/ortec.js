@@ -41,7 +41,12 @@ $('.mobile-menu').on('click', function() {
   }
 });
 
+$("#search-block-form .in-field-labels-processed").removeClass("element-invisible");
 
+Height = $("#block-views-manufacturies-block .views-field-field-logo").height();
+$("#block-views-manufacturies-block .views-field-field-second-title").css("height", Height);
+width = $("#block-views-manufacturies-block .views-field-field-logo").width();
+$("#block-views-manufacturies-block .views-field-field-second-title").css("width", width);
 
   }
 };

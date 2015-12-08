@@ -15,6 +15,33 @@
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
     <?php endif; ?>
 
+    <div id="navigation">
+
+      <?php if ($main_menu): ?>
+        <nav id="main-menu" role="navigation" tabindex="-1">
+          <?php
+          // This code snippet is hard to modify. We recommend turning off the
+          // "Main menu" on your sub-theme's settings form, deleting this PHP
+          // code block, and, instead, using the "Menu block" module.
+          // @see https://drupal.org/project/menu_block
+          print theme('links__system_main_menu', array(
+            'links' => $main_menu,
+            'attributes' => array(
+              'class' => array('links', 'inline', 'clearfix'),
+            ),
+            'heading' => array(
+              'text' => t('Main menu'),
+              'level' => 'h2',
+              'class' => array('element-invisible'),
+            ),
+          )); ?>
+        </nav>
+      <?php endif; ?>
+
+      <?php print render($page['navigation']); ?>
+
+    </div>
+
     <?php if ($site_name || $site_slogan): ?>
       <div class="header__name-and-slogan" id="name-and-slogan">
         <?php if ($site_name): ?>
@@ -64,44 +91,21 @@
       <?php if ($title): ?>
         <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
       <?php endif; ?>
-      <?php print render($title_suffix); ?>
-      <?php print $messages; ?>
-      <?php print render($tabs); ?>
-      <?php print render($page['help']); ?>
-      <?php if ($action_links): ?>
-        <ul class="action-links"><?php print render($action_links); ?></ul>
-      <?php endif; ?>
-      <?php print render($page['content']); ?>
+      <div class="wrapper-width">
+        <?php print render($title_suffix); ?>
+        <?php print $messages; ?>
+        <?php print render($tabs); ?>
+        <?php print render($page['help']); ?>
+        <?php if ($action_links): ?>
+          <ul class="action-links"><?php print render($action_links); ?></ul>
+        <?php endif; ?>
+        <?php print render($page['content']); ?>
+      </div>
       <?php print render($page['content_bottom']); ?>
       <?php print $feed_icons; ?>
     </div>
 
-    <div id="navigation">
 
-      <?php if ($main_menu): ?>
-        <nav id="main-menu" role="navigation" tabindex="-1">
-          <?php
-          // This code snippet is hard to modify. We recommend turning off the
-          // "Main menu" on your sub-theme's settings form, deleting this PHP
-          // code block, and, instead, using the "Menu block" module.
-          // @see https://drupal.org/project/menu_block
-          print theme('links__system_main_menu', array(
-            'links' => $main_menu,
-            'attributes' => array(
-              'class' => array('links', 'inline', 'clearfix'),
-            ),
-            'heading' => array(
-              'text' => t('Main menu'),
-              'level' => 'h2',
-              'class' => array('element-invisible'),
-            ),
-          )); ?>
-        </nav>
-      <?php endif; ?>
-
-      <?php print render($page['navigation']); ?>
-
-    </div>
 
     <?php
       // Render the sidebars to see if there's anything in them.
@@ -117,9 +121,14 @@
     <?php endif; ?>
 
   </div>
-
-  <?php print render($page['footer']); ?>
-
+  <div class="wrapper-footer">
+    <?php print render($page['footer']); ?>
+  </div>
+  <?php
+  if (drupal_is_front_page()) {?>
+  <iframe allowfullscreen="" frameborder="0" height="450" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13505.393540614668!2d34.8786349!3d32.1948419!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb472745b8b181e01!2z15DXldeo15jXpyDXqdeZ15XXldenINem15nXldeTINeV15DXodek16fXlCDXkdeiItee!5e0!3m2!1siw!2sil!4v1449560511525" style="border:0" width="100%"></iframe>
+  <?php }
+  ?>
 </div>
 
 <?php print render($page['bottom']); ?>
