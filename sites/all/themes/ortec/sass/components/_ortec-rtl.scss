@@ -200,6 +200,9 @@ $dark-blue: #3a92d7;
       padding-right: 43px;
       padding-left: 0;
       clear: right;
+      @include res(s){
+        background-size: 25px;
+      }
     }
     .address .content{
       padding-right: 43px;

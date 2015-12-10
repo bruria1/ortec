@@ -444,7 +444,7 @@ body.menu-open #page{
     @include res(s){
       width: 100%;
       margin: 0;
-      margin-bottom: 20px;
+      margin-bottom: 20px!important;
     }
     &:hover{
         opacity: 0.6;
@@ -789,6 +789,7 @@ body.menu-open #page{
   }
   img{
     border:2px solid $blue;
+    margin: 0!important;
   }
   .views-field-title{
     a{
@@ -1012,6 +1013,10 @@ body.menu-open #page{
   }
   .field-name-field-pdf{
     float: right;
+    margin-bottom: 30px;
+    @include res(s-m){
+      float: none!important;
+    }
     img{
       display: none;
     }
