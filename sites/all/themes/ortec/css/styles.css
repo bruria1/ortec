@@ -3099,16 +3099,20 @@ body.menu-open #page {
 
 /*******  product page  ******/
 /* line 937, ../sass/components/_ortec.scss */
+.node-type-product .field-name-field-activit {
+  display: none;
+}
+/* line 940, ../sass/components/_ortec.scss */
 .node-type-product .field-name-field-product-image {
   float: right;
   margin-left: 44px;
   position: relative;
 }
-/* line 941, ../sass/components/_ortec.scss */
+/* line 944, ../sass/components/_ortec.scss */
 .node-type-product .field-name-field-product-image img {
   margin-bottom: -7px;
 }
-/* line 945, ../sass/components/_ortec.scss */
+/* line 948, ../sass/components/_ortec.scss */
 .node-type-product .field-name-field-product-image:after {
   content: "";
   position: absolute;
@@ -3120,40 +3124,40 @@ body.menu-open #page {
   border: 10px solid #fff;
   position: absolute;
 }
-/* line 953, ../sass/components/_ortec.scss */
+/* line 956, ../sass/components/_ortec.scss */
 .node-type-product .field-name-field-pdf {
   float: right;
 }
-/* line 955, ../sass/components/_ortec.scss */
+/* line 958, ../sass/components/_ortec.scss */
 .node-type-product .field-name-field-pdf img {
   display: none;
 }
-/* line 958, ../sass/components/_ortec.scss */
+/* line 961, ../sass/components/_ortec.scss */
 .node-type-product .field-name-field-pdf .file {
   background: url("../images/pdf.png") no-repeat scroll left center transparent;
   padding-left: 36px;
   height: 30px;
   display: block;
 }
-/* line 963, ../sass/components/_ortec.scss */
+/* line 966, ../sass/components/_ortec.scss */
 .node-type-product .field-name-field-pdf .file a {
   color: #404040;
   padding-top: 5px;
   display: block;
 }
-/* line 970, ../sass/components/_ortec.scss */
+/* line 973, ../sass/components/_ortec.scss */
 .node-type-product article {
   float: right;
   width: 75%;
   margin-top: 12px;
 }
-/* line 974, ../sass/components/_ortec.scss */
+/* line 977, ../sass/components/_ortec.scss */
 .node-type-product article p {
   margin-top: 0;
 }
 
 /********  manufacturies page ***********/
-/* line 983, ../sass/components/_ortec.scss */
+/* line 986, ../sass/components/_ortec.scss */
 #block-views-manufacturies-block-1 .views-row {
   width: 30%;
   float: left;
@@ -3163,7 +3167,7 @@ body.menu-open #page {
   box-sizing: border-box;
 }
 @media (min-width: 481px) and (max-width: 767px) {
-  /* line 983, ../sass/components/_ortec.scss */
+  /* line 986, ../sass/components/_ortec.scss */
   #block-views-manufacturies-block-1 .views-row {
     width: 48%;
     margin-bottom: 20px;
@@ -3179,7 +3183,7 @@ body.menu-open #page {
   }
 }
 @media (max-width: 480px) {
-  /* line 983, ../sass/components/_ortec.scss */
+  /* line 986, ../sass/components/_ortec.scss */
   #block-views-manufacturies-block-1 .views-row {
     width: 100%;
     margin-right: 0 !important;
@@ -3199,7 +3203,7 @@ body.menu-open #page {
     clear: none;
   }
 }
-/* line 986, ../sass/components/_ortec.scss */
+/* line 989, ../sass/components/_ortec.scss */
 #block-views-manufacturies-block-1 .views-field-field-logo:after {
   border-bottom: 1px solid #27b8e8;
   border-right: 1px solid #27b8e8;
@@ -3209,43 +3213,43 @@ body.menu-open #page {
   display: block;
   margin-top: -10px;
 }
-/* line 996, ../sass/components/_ortec.scss */
+/* line 999, ../sass/components/_ortec.scss */
 #block-views-manufacturies-block-1 .views-field-field-logo img {
   width: 90%;
   margin: 0 auto;
   display: block;
 }
-/* line 1002, ../sass/components/_ortec.scss */
+/* line 1005, ../sass/components/_ortec.scss */
 #block-views-manufacturies-block-1 .views-field-title {
   font-size: 1.4em;
   padding: 13px 0;
   font-weight: bold;
   display: block;
 }
-/* line 1008, ../sass/components/_ortec.scss */
+/* line 1011, ../sass/components/_ortec.scss */
 #block-views-manufacturies-block-1 .views-field-field-second-title {
   font-size: 1.3em;
   margin-bottom: 13px;
 }
-/* line 1012, ../sass/components/_ortec.scss */
+/* line 1015, ../sass/components/_ortec.scss */
 #block-views-manufacturies-block-1 .views-field-field-activities {
   margin-top: 13px;
 }
-/* line 1014, ../sass/components/_ortec.scss */
+/* line 1017, ../sass/components/_ortec.scss */
 #block-views-manufacturies-block-1 .views-field-field-activities .views-label {
   font-size: 1.4em;
   font-weight: bold;
 }
-/* line 1019, ../sass/components/_ortec.scss */
+/* line 1022, ../sass/components/_ortec.scss */
 #block-views-manufacturies-block-1 .views-field-field-activities .item-list ul {
   margin: 0;
   padding: 0;
 }
-/* line 1022, ../sass/components/_ortec.scss */
+/* line 1025, ../sass/components/_ortec.scss */
 #block-views-manufacturies-block-1 .views-field-field-activities .item-list ul li {
   margin-left: 11px;
 }
-/* line 1028, ../sass/components/_ortec.scss */
+/* line 1031, ../sass/components/_ortec.scss */
 #block-views-manufacturies-block-1 .views-field-field-links-manufacture {
   width: 100%;
   border-top: 1px solid #bfbfbf;
@@ -3254,7 +3258,7 @@ body.menu-open #page {
   text-align: right;
   font-size: 1.4em;
 }
-/* line 1035, ../sass/components/_ortec.scss */
+/* line 1038, ../sass/components/_ortec.scss */
 #block-views-manufacturies-block-1 .views-field-field-links-manufacture a {
   color: #808080;
   background: url("../images/arrow-right.png") no-repeat scroll left center transparent;
@@ -3262,29 +3266,29 @@ body.menu-open #page {
 }
 
 /*********  contact  ********/
-/* line 1046, ../sass/components/_ortec.scss */
+/* line 1049, ../sass/components/_ortec.scss */
 .node-type-webform #main {
   margin-bottom: 30px;
 }
-/* line 1049, ../sass/components/_ortec.scss */
+/* line 1052, ../sass/components/_ortec.scss */
 .node-type-webform textarea {
   border: none;
 }
-/* line 1052, ../sass/components/_ortec.scss */
+/* line 1055, ../sass/components/_ortec.scss */
 .node-type-webform .grippie {
   display: none;
 }
-/* line 1055, ../sass/components/_ortec.scss */
+/* line 1058, ../sass/components/_ortec.scss */
 .node-type-webform .wrapper-footer {
   display: none;
 }
-/* line 1058, ../sass/components/_ortec.scss */
+/* line 1061, ../sass/components/_ortec.scss */
 .node-type-webform .wrapper-bottom {
   width: 100%;
 }
 
 /******  about page  ********/
-/* line 1065, ../sass/components/_ortec.scss */
+/* line 1068, ../sass/components/_ortec.scss */
 #block-views-mans-block {
   width: 1210px;
   max-width: 100%;
@@ -3292,12 +3296,12 @@ body.menu-open #page {
   padding: 0 3%;
   box-sizing: border-box;
 }
-/* line 1067, ../sass/components/_ortec.scss */
+/* line 1070, ../sass/components/_ortec.scss */
 #block-views-mans-block .block-title {
   font-size: 3em;
   text-align: center;
 }
-/* line 1071, ../sass/components/_ortec.scss */
+/* line 1074, ../sass/components/_ortec.scss */
 #block-views-mans-block .views-row {
   width: 22%;
   float: left;
@@ -3307,49 +3311,49 @@ body.menu-open #page {
   box-sizing: border-box;
 }
 @media (min-width: 481px) and (max-width: 767px) {
-  /* line 1071, ../sass/components/_ortec.scss */
+  /* line 1074, ../sass/components/_ortec.scss */
   #block-views-mans-block .views-row {
     width: 48%;
     margin-bottom: 20px;
   }
-  /* line 1081, ../sass/components/_ortec.scss */
+  /* line 1084, ../sass/components/_ortec.scss */
   #block-views-mans-block .views-row.views-row-odd {
     margin-right: 4% !important;
     clear: both;
   }
-  /* line 1085, ../sass/components/_ortec.scss */
+  /* line 1088, ../sass/components/_ortec.scss */
   #block-views-mans-block .views-row.views-row-even {
     margin-left: 0 !important;
   }
 }
 @media (max-width: 480px) {
-  /* line 1071, ../sass/components/_ortec.scss */
+  /* line 1074, ../sass/components/_ortec.scss */
   #block-views-mans-block .views-row {
     width: 100%;
     margin-right: 0 !important;
   }
 }
-/* line 1093, ../sass/components/_ortec.scss */
+/* line 1096, ../sass/components/_ortec.scss */
 #block-views-mans-block .views-row:nth-child(4n) {
   margin-right: 0;
 }
-/* line 1096, ../sass/components/_ortec.scss */
+/* line 1099, ../sass/components/_ortec.scss */
 #block-views-mans-block .views-row:nth-child(4n+1) {
   clear: both;
 }
 @media (min-width: 481px) and (max-width: 767px) {
-  /* line 1096, ../sass/components/_ortec.scss */
+  /* line 1099, ../sass/components/_ortec.scss */
   #block-views-mans-block .views-row:nth-child(4n+1) {
     clear: none;
   }
 }
-/* line 1103, ../sass/components/_ortec.scss */
+/* line 1106, ../sass/components/_ortec.scss */
 #block-views-mans-block .views-field-title {
   font-weight: bold;
   font-size: 1.5em;
   padding-bottom: 10px;
 }
-/* line 1108, ../sass/components/_ortec.scss */
+/* line 1111, ../sass/components/_ortec.scss */
 #block-views-mans-block .views-field-field-role {
   font-size: 1.1em;
   border-bottom: 1px solid #bfbfbf;
