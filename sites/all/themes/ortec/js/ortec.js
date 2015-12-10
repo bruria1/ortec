@@ -72,6 +72,12 @@ if ($(".he .language-link").hasClass("locale-untranslated")){
   $(".he .language-link").removeClass("locale-untranslated")
 }
 
+if ($("body").hasClass("node-type-product")){
+  nidnumber=$(".field-name-field-activity .field-item").html();
+  id="#block-views-hp-gallery-block-2 .nid-"+nidnumber+" a";
+  $(id).addClass("active");
+}
+
   }
 };
 
