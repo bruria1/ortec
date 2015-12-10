@@ -48,6 +48,8 @@ width = $("#block-views-manufacturies-block .views-field-field-logo").width();
 $("#block-views-manufacturies-block .views-field-field-second-title").css("height", Height);
 $("#block-views-manufacturies-block .views-field-field-second-title .field-content").css("height", Height);
 $("#block-views-manufacturies-block .views-field-field-second-title").css("width", width);
+imgheight = $("#block-views-products-block img").height();
+$("#block-views-products-block .views-field-field-product-image a").css("height", imgheight);
 
 $(window).resize(function() {
   Height = $("#block-views-manufacturies-block .views-field-field-logo").height();
@@ -55,11 +57,20 @@ $(window).resize(function() {
   $("#block-views-manufacturies-block .views-field-field-second-title").css("height", Height);
   $("#block-views-manufacturies-block .views-field-field-second-title .field-content").css("height", Height);
   $("#block-views-manufacturies-block .views-field-field-second-title").css("width", width);
+  imgheight = $("#block-views-products-block img").height();
+  $("#block-views-products-block .views-field-field-product-image a").css("height", imgheight);
 });
 
 
+if ($(".en .language-link").hasClass("locale-untranslated")){
+  $(".en .locale-untranslated").html('<a href="/">English</a>');
+  $(".en .language-link").removeClass("locale-untranslated")
+}
 
-
+if ($(".he .language-link").hasClass("locale-untranslated")){
+  $(".he .locale-untranslated").html('<a href="/">עברית</a>');
+  $(".he .language-link").removeClass("locale-untranslated")
+}
 
   }
 };

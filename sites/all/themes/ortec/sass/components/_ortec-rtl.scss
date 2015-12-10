@@ -1,0 +1,418 @@
+@import url(http://fonts.googleapis.com/earlyaccess/opensanshebrew.css);
+
+@mixin res($media) {
+  @if $media == s {
+    @media (max-width: 480px) { @content; }
+  }
+  @else if $media == m {
+    @media (min-width: 481px) and (max-width: 767px) { @content; }
+  }
+  @else if $media == l {
+    @media  (min-width: 768px) and (max-width: 1100px){ @content; }
+  }
+  @if $media == s-m {
+    @media (max-width: 767px) { @content; }
+  }
+}
+
+
+/******   colors  *********/
+
+$blue: #27b8e8;
+$default: #404040;
+$dark-blue: #3a92d7;
+
+
+/********  mixin *********/
+
+@mixin width(){
+  width: 1210px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 3%;
+  box-sizing: border-box;
+}
+
+@mixin grid3(){
+    width: 30%;
+    float: right;
+    margin-left: 5%;
+    margin-right: 0;
+    position: relative;
+    margin-bottom: 60px;
+    box-sizing: border-box;
+    @include res(m){
+      width: 48%;
+      margin-bottom: 20px;
+      &.views-row-odd{
+        margin-left: 4%!important;
+        margin-right: 0!important;
+        clear: both;
+      }
+      &.views-row-even{
+        margin-left: 0!important;
+      }
+    }
+    @include res(s){
+      width: 100%;
+      margin-left: 0!important
+    }
+  &:nth-child(3n){
+    margin-left: 0;
+  }
+  &:nth-child(3n+1){
+    clear: both;
+    @include res(m){
+      clear: none;
+    }
+  }
+}
+
+#page-title{
+  .image{
+      background: url("../images/activity-title.png") no-repeat scroll right center transparent;
+  }
+  .title{
+    padding-right: 195px;
+    padding-left: 0;
+  }
+}
+/**********  header  *********/
+
+#block-locale-language{
+  float: left;
+  @include res(l){
+    margin-left: 10px;
+    margin-right: 0;
+  }
+  ul{
+    a{
+      padding-right: 30px;
+      padding-left: 0;
+    }
+  }
+}
+
+#block-search-form{
+  float: left;
+  .in-field-labels-processed{
+    right: 5px;
+    left: auto;
+  }
+  label{
+    padding-right: 10px;
+    padding-left: 0;
+  }
+  .form-text{
+    padding-right: 10px;
+    padding-left: 0;
+  }
+  .form-submit{
+      right: auto;
+      left: 6px;
+  }
+}
+
+/**********  menu  *********/
+
+#main-menu{
+  float: right;
+  margin-right: 6%;
+  margin-left: 0;
+  @include res(l){
+    float: left;
+    margin-right: 0;
+  }
+  li{
+    padding: 0 0 0 20px !important;
+  }
+  li.last{
+    padding: 0!important;
+  }
+}
+
+/*********** responsive menu  ****************/
+
+@include res(s-m){
+  #navigation{
+    left: -100%;
+    right: auto;
+  }
+  #main-menu{
+    margin-right: 0;
+  }
+  .menu-open #navigation{
+    left: 0;
+    right: auto;
+  }
+}
+
+.mobile-menu{
+  float: left;
+  padding: 8px 5px 5px 0px;
+}
+
+/*********** front  ****************/
+
+#block-views-hp-gallery-block{
+  .views-row{
+    @include grid3();
+  }
+  .views-field-field-img{
+    @include res(s-m){
+      float: left;
+    }
+  }
+  .views-field-title{
+    right: auto;
+    left: 0;
+    @include res(s-m){
+      float: right;
+      padding: 0 2% 0 0;
+    }
+  }
+}
+
+#block-views-manufacturies-block{
+    .views-row{
+    @include grid3();
+  }
+  .views-field-title{
+    padding-left: 10px;
+    padding-left: 0;
+  }
+}
+
+
+/**********  footer  ***********/
+
+#block-block-2{
+    float: right;
+    .label{
+      background: url("../images/contact-footer.png") no-repeat scroll right 1px transparent;
+      float: right;
+      margin-left: 5px;
+      margin-right: 0;
+      padding-right: 43px;
+      padding-left: 0;
+      clear: right;
+    }
+    .address .content{
+      padding-right: 43px;
+      padding-left: 0;
+    }
+    .phone .label{
+      background-position: right -35px;
+      @include res(s){
+        background-position: right -27px;
+      }
+    }
+    .fax .label{
+      background-position: right -75px;
+      @include res(s){
+        background-position: right -56px;
+      }
+    }
+    .email .label{
+      background-position: right -112px;
+      @include res(s){
+        background-position: right -85px;
+      }
+    }
+    .left-side{
+      float: left;
+    }
+}
+
+#block-webform-client-block-38, #webform-client-form-17{
+    float: left;   
+    h2{
+      background: url("../images/plus.png") no-repeat scroll right 26px transparent;
+      padding-right: 44px;
+      padding-left: 0;
+      @include res(s){
+        background-position: right 13px;
+      }
+    }
+    input.form-text{
+      padding: 0px 75px 0 0;
+      background: url("../images/form-icons.png") no-repeat scroll right -1px #fff;
+    }
+    label{
+      padding: 10px 75px 0 0;
+    }
+    #webform-component-phone{
+      input{
+        background-position: right -72px;
+      }
+    }
+    #webform-component-email{
+      input{
+        background-position: right -142px;
+      }
+    }
+    .form-submit{
+      float: left;
+    }
+}
+
+.wrapper-bottom{
+    #block-block-1{
+      float: right;
+    }
+    #block-system-main-menu{
+      float: left;
+    }
+}
+
+/*********  activities  *********/
+
+#block-views-hp-gallery-block-1{
+  .views-row{
+    @include grid3();
+  }
+  .views-field-field-subject{
+    ul{
+      li{
+        margin: 0 1.5em 0.25em 0;
+         &:before{
+          right: 5px;
+          left: auto;
+        }       
+      }
+    }
+  }
+}
+
+
+/***********  products page************/
+
+#block-views-hp-gallery-block-2{
+  float: right;
+  .block-title{
+    background: url("../images/sort.png") no-repeat scroll right center transparent;
+    padding: 24px 50px 0 0;
+  }
+  .views-row{
+    a{
+      padding-right: 30px;
+      &:before{
+        right: 5px;
+      }
+    }
+  }
+}
+
+#block-views-products-block{
+  float: left;
+    .views-row{
+      @include grid3();
+    }
+  .views-field-field-product-image{
+    a{
+      position: relative;
+      display: block;
+    }
+  }
+  .views-field-view-node{
+    float: left;
+    text-align: left;
+    font-size: 1.1em;
+    a{
+      background: url("../images/arrow-left.png") no-repeat scroll right top transparent;
+      padding-right: 32px;
+      padding-left: 0;
+      float: left;
+    }
+  }
+  .views-field-field-links-manufacture{
+    float: right;
+    font-size: 1.1em;
+    a{
+      background: url("../images/arrow-right.png") no-repeat scroll left top transparent;
+      padding-left: 32px;
+      padding-right: 0;
+      float: right;
+    }
+  }
+}
+
+/*******  product page  ******/
+
+.node-type-product{
+  .field-name-field-product-image{
+    float: left;
+    margin-right: 44px;
+    margin-left: 0;
+  }
+  .field-name-field-pdf{
+    float: left;
+    .file{
+        background: url("../images/pdf.png") no-repeat scroll right center transparent;
+        padding-right: 36px;
+        padding-left: 0;
+    }
+  }
+  article{
+    float: left;
+  }
+}
+
+/********  manufacturies page ***********/
+
+#block-views-manufacturies-block-1{
+  .views-row{
+    @include grid3();
+  }
+  .views-field-field-activities{
+    .item-list{
+      ul{
+        li{
+          margin-right: 11px;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  .views-field-field-links-manufacture{
+    text-align: left;
+    a{
+      background: url("../images/arrow-left.png") no-repeat scroll right center transparent;
+      padding-right: 32px;
+      padding-left: 0;
+    }
+  }
+}
+
+/******  about page  ********/
+
+#block-views-mans-block{
+  @include width();
+  .views-row{
+    float: right;
+    margin-left: 4%;
+    margin-right: 0;
+    box-sizing: border-box;
+    @include res(m){
+      &.views-row-odd{
+        margin-left: 4%!important;
+        margin-right: 0;
+      }
+      &.views-row-even{
+        margin-left: 0!important;
+      }
+    }
+    @include res(s){
+      margin-left: 0!important
+    }
+  &:nth-child(4n){
+    margin-left: 0;
+  }
+  &:nth-child(4n+1){
+    clear: both;
+    @include res(m){
+      clear: none;
+    }
+  }
+  }
+}

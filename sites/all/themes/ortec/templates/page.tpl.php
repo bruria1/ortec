@@ -89,7 +89,7 @@
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
-        <h1 class="page__title title" id="page-title"><?php print $title; ?></h1>
+        <h1 class="page__title title" id="page-title"><div class="wrapper-width"><div class="image"></div><div class="title"><?php print $title; ?></div></div></h1>
       <?php endif; ?>
       <div class="wrapper-width">
         <?php print render($title_suffix); ?>
@@ -126,11 +126,10 @@
   </div>
 </div>
   <?php
-  if (drupal_is_front_page()) {?>
-  <iframe allowfullscreen="" frameborder="0" height="450" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13505.393540614668!2d34.8786349!3d32.1948419!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb472745b8b181e01!2z15DXldeo15jXpyDXqdeZ15XXldenINem15nXldeTINeV15DXodek16fXlCDXkdeiItee!5e0!3m2!1siw!2sil!4v1449560511525" style="border:0" width="100%"></iframe>
-  <?php }
-  ?>
-  
+    if (drupal_is_front_page() || ($node->type == "webform")){ ?>
+    <iframe allowfullscreen="" frameborder="0" height="450" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13505.393540614668!2d34.8786349!3d32.1948419!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb472745b8b181e01!2z15DXldeo15jXpyDXqdeZ15XXldenINem15nXldeTINeV15DXodek16fXlCDXkdeiItee!5e0!3m2!1siw!2sil!4v1449560511525" style="border:0" width="100%"></iframe>
+    <?php }
+    ?>
   <div class="wrapper-bottom">
     <?php print render($page['bottom']); ?>
   </div>
