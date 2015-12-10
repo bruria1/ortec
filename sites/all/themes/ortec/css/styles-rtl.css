@@ -790,20 +790,20 @@ html.js .collapsed .fieldset-legend {
   padding: 24px 50px 0 0;
 }
 /* line 297, ../sass/components/_ortec-rtl.scss */
-#block-views-hp-gallery-block-2 .views-row a {
+#block-views-hp-gallery-block-2 .views-row a, #block-views-hp-gallery-block-2 .view-header a {
   padding-right: 30px;
 }
 /* line 299, ../sass/components/_ortec-rtl.scss */
-#block-views-hp-gallery-block-2 .views-row a:before {
+#block-views-hp-gallery-block-2 .views-row a:before, #block-views-hp-gallery-block-2 .view-header a:before {
   right: 5px;
 }
 
 /* line 306, ../sass/components/_ortec-rtl.scss */
-#block-views-products-block {
+#block-views-products-block, #block-views-products-block-1 {
   float: left;
 }
 /* line 308, ../sass/components/_ortec-rtl.scss */
-#block-views-products-block .views-row {
+#block-views-products-block .views-row, #block-views-products-block-1 .views-row {
   width: 30%;
   float: right;
   margin-left: 5%;
@@ -814,67 +814,67 @@ html.js .collapsed .fieldset-legend {
 }
 @media (min-width: 481px) and (max-width: 767px) {
   /* line 308, ../sass/components/_ortec-rtl.scss */
-  #block-views-products-block .views-row {
+  #block-views-products-block .views-row, #block-views-products-block-1 .views-row {
     width: 48%;
     margin-bottom: 20px;
   }
   /* line 47, ../sass/components/_ortec-rtl.scss */
-  #block-views-products-block .views-row.views-row-odd {
+  #block-views-products-block .views-row.views-row-odd, #block-views-products-block-1 .views-row.views-row-odd {
     margin-left: 4% !important;
     margin-right: 0 !important;
     clear: both;
   }
   /* line 52, ../sass/components/_ortec-rtl.scss */
-  #block-views-products-block .views-row.views-row-even {
+  #block-views-products-block .views-row.views-row-even, #block-views-products-block-1 .views-row.views-row-even {
     margin-left: 0 !important;
   }
 }
 @media (max-width: 480px) {
   /* line 308, ../sass/components/_ortec-rtl.scss */
-  #block-views-products-block .views-row {
+  #block-views-products-block .views-row, #block-views-products-block-1 .views-row {
     width: 100%;
     margin-left: 0 !important;
   }
 }
 /* line 60, ../sass/components/_ortec-rtl.scss */
-#block-views-products-block .views-row:nth-child(3n) {
+#block-views-products-block .views-row:nth-child(3n), #block-views-products-block-1 .views-row:nth-child(3n) {
   margin-left: 0;
 }
 /* line 63, ../sass/components/_ortec-rtl.scss */
-#block-views-products-block .views-row:nth-child(3n+1) {
+#block-views-products-block .views-row:nth-child(3n+1), #block-views-products-block-1 .views-row:nth-child(3n+1) {
   clear: both;
 }
 @media (min-width: 481px) and (max-width: 767px) {
   /* line 63, ../sass/components/_ortec-rtl.scss */
-  #block-views-products-block .views-row:nth-child(3n+1) {
+  #block-views-products-block .views-row:nth-child(3n+1), #block-views-products-block-1 .views-row:nth-child(3n+1) {
     clear: none;
   }
 }
 /* line 312, ../sass/components/_ortec-rtl.scss */
-#block-views-products-block .views-field-field-product-image a {
+#block-views-products-block .views-field-field-product-image a, #block-views-products-block-1 .views-field-field-product-image a {
   position: relative;
   display: block;
 }
 /* line 317, ../sass/components/_ortec-rtl.scss */
-#block-views-products-block .views-field-view-node {
+#block-views-products-block .views-field-view-node, #block-views-products-block-1 .views-field-view-node {
   float: left;
   text-align: left;
   font-size: 1.1em;
 }
 /* line 321, ../sass/components/_ortec-rtl.scss */
-#block-views-products-block .views-field-view-node a {
+#block-views-products-block .views-field-view-node a, #block-views-products-block-1 .views-field-view-node a {
   background: url("../images/arrow-left.png") no-repeat scroll right top transparent;
   padding-right: 32px;
   padding-left: 0;
   float: left;
 }
 /* line 328, ../sass/components/_ortec-rtl.scss */
-#block-views-products-block .views-field-field-links-manufacture {
+#block-views-products-block .views-field-field-links-manufacture, #block-views-products-block-1 .views-field-field-links-manufacture {
   float: right;
   font-size: 1.1em;
 }
 /* line 331, ../sass/components/_ortec-rtl.scss */
-#block-views-products-block .views-field-field-links-manufacture a {
+#block-views-products-block .views-field-field-links-manufacture a, #block-views-products-block-1 .views-field-field-links-manufacture a {
   background: url("../images/arrow-right.png") no-repeat scroll left top transparent;
   padding-left: 32px;
   padding-right: 0;

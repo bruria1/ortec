@@ -293,7 +293,7 @@ $dark-blue: #3a92d7;
     background: url("../images/sort.png") no-repeat scroll right center transparent;
     padding: 24px 50px 0 0;
   }
-  .views-row{
+  .views-row, .view-header{
     a{
       padding-right: 30px;
       &:before{
@@ -303,7 +303,7 @@ $dark-blue: #3a92d7;
   }
 }
 
-#block-views-products-block{
+#block-views-products-block, #block-views-products-block-1{
   float: left;
     .views-row{
       @include grid3();
