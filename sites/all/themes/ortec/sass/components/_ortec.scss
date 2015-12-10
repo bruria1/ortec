@@ -64,6 +64,10 @@ $dark-blue: #3a92d7;
       clear: none;
     }
   }
+  img{
+    display: block;
+    margin: 0 auto
+  }
 }
 
 a, a:link, a:visited{
@@ -768,6 +772,8 @@ body.menu-open #page{
       li{
         list-style-type: none;
         display: inline;
+        margin: 0  0 0 0.5em ;
+        padding: 0.2em 0.5em 0 0 ;
         a.active, a:hover{
           color: $dark-blue;
         }
@@ -794,7 +800,11 @@ body.menu-open #page{
       padding: 10px 0;
       border-bottom: 1px solid #bfbfbf;
       margin-bottom: 14px;
-      height: 48px;
+      min-height: 48px;
+      @include res(s-m){
+        font-size: 1.1em;
+        line-height: 1.1em;
+      }
     }
   }
   .views-field-field-subject{
@@ -891,12 +901,18 @@ body.menu-open #page{
   float: right;
   width: 75%;
   margin-top: 12px;
+  @include res(s-m){
+    width: 100%;
+  }
     .views-row{
       @include grid3();
     }
   .views-field-field-product-image{
     a{
       position: relative;
+      display: block;
+      max-width: 300px;
+      margin: 0 auto;
       display: block;
     }
   }
@@ -919,7 +935,11 @@ body.menu-open #page{
       border-bottom: 1px solid #bfbfbf;
       display: block;
       margin-bottom: 14px;
-      height: 48px;
+      min-height: 48px;
+      @include res(s-m){
+        line-height: 1.1em;
+        font-size: 1.1em;
+      }
     }
   }
   .views-field-view-node{
@@ -959,17 +979,36 @@ body.menu-open #page{
     float: right;
     margin-left: 44px;
     position: relative;
+    @include res(m){
+      max-width: 50%;
+    }
+    @include res(s){
+      width: 100%;
+      margin-right: 0!important;
+      margin-left: 0!important;
+    }
     img{
        margin-bottom: -7px;
     }
   }
-  .field-name-field-product-image:after{
+  .field-name-field-product-image .field-items{
+      @include res(s){
+        max-width: 300px;
+        width: 100%;
+        margin: 0 auto;
+      }
+  }
+  .field-name-field-product-image .field-items:after{
       content:"";
       position:absolute;
       top:0; bottom:0; left:0; right:0;
       opacity:0.5;
       border:10px solid #fff;
       position: absolute;
+      @include res(s){
+        max-width: 280px;
+        margin: 0 auto;
+      }
   }
   .field-name-field-pdf{
     float: right;
@@ -992,6 +1031,9 @@ body.menu-open #page{
     float: right;
     width: 75%;
     margin-top: 12px;
+    @include res(s-m){
+      width: 100%;
+    }
     p{
       margin-top: 0;
     }
