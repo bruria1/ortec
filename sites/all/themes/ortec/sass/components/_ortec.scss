@@ -410,12 +410,13 @@ body.menu-open #page{
       font-weight: normal;
     }
   }
-  iframe{
+}
+
+  iframe.map{
     @include res(s-m){
       height: 200px !important;
     }
   }
-}
 
 #block-views-hp-gallery-block{
   background-color: $blue;
@@ -987,6 +988,7 @@ body.menu-open #page{
       width: 100%;
       margin-right: 0!important;
       margin-left: 0!important;
+      margin-bottom: 20px;
     }
     img{
        margin-bottom: -7px;
