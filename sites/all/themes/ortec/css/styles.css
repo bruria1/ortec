@@ -2773,7 +2773,7 @@ body.menu-open #page {
 #block-webform-client-block-38 textarea, #block-webform-client-block-44 textarea, #webform-client-form-17 textarea, #webform-client-form-19 textarea {
   border: none;
   border-radius: 5px;
-  padding: 0px 0 0 75px;
+  padding: 0 0 0 75px;
   background: url("../images/form-icons.png") no-repeat scroll left -209px #fff;
   font-size: 1.5em;
   height: 100px;
