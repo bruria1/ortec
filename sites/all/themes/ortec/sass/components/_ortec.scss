@@ -720,6 +720,14 @@ body.menu-open #page{
         background-position: left -142px;
       }
     }
+    textarea{
+      border: none;
+      border-radius: 5px;
+      padding: 0px 0 0 75px;
+      background: url("../images/form-icons.png") no-repeat scroll left -209px #fff;
+      font-size: 1.5em;
+      height: 100px;
+    }    
     .form-submit{
       height: 50px;
       float: right;

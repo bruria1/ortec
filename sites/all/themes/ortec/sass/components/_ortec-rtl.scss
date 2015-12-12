@@ -258,6 +258,10 @@ $dark-blue: #3a92d7;
         background-position: right -142px;
       }
     }
+    textarea{
+      padding: 0px 75px 0 0px;
+      background: url("../images/form-icons.png") no-repeat scroll right -209px #fff;
+    }  
     .form-submit{
       float: left;
     }
