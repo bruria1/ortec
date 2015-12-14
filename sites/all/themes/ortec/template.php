@@ -130,3 +130,19 @@ function ortec_preprocess_block(&$variables, $hook) {
   //}
 }
 // */
+
+// this goes in template.php
+// check if node type page and then add to $vars array
+// declaring $vars['foo'] gives you a $foo variable to use in page.tpl.php
+
+function ortec_preprocess_page(&$vars) {
+  $vars['page_banner'] = '';
+  // Get the object and do some other checks based on what you need.
+  if (($node = menu_get_object()) && $node->type) {
+    // Generate a render array for the node.
+    $view = node_view($node);
+    // "Create" a new variable for the page.tpl.php.
+    // This will expose $VAR_NAME in the page template.
+    $vars['page_banner'] = drupal_render($view['field_icon_title']);
+  }
+}

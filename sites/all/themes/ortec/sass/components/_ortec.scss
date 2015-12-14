@@ -131,6 +131,7 @@ body{
   font-weight: normal;
   font-size: 3em;
   margin-bottom: 100px;
+  position: relative;
   @include res(s-m){
     margin-bottom: 20px;
     font-size: 2em;
@@ -141,21 +142,14 @@ body{
       padding: 0 3%;
     }
   }
-  .image{
-      background: url("../images/activity-title.png") no-repeat scroll left center transparent;
-      position: absolute;
-      width: 164px;
-      height: 164px;
-      padding: 0;
-      top: -20px;
+  .image .field-name-field-icon-title{
+      float: left;
+      margin: -46px 20px 0 0px;
+      img{
+        border-radius: 50%;
+      }
     @include res(s-m){
       display: none;
-    }
-  }
-  .title{
-    padding-left: 195px;
-    @include res(s-m){
-      padding: 0!important;
     }
   }
 }
@@ -793,6 +787,7 @@ body.menu-open #page{
 /*********  activities  *********/
 
 #block-views-hp-gallery-block-1{
+  @include width;
   .views-row{
     @include grid3();
   }
@@ -843,6 +838,12 @@ body.menu-open #page{
 
 
 /***********  products page************/
+
+.node-type-activity{
+  .region-content-bottom{
+    @include width;
+  }
+}
 
 #block-views-hp-gallery-block-2{
   width: 20%;

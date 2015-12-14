@@ -73,12 +73,9 @@ $dark-blue: #3a92d7;
 }
 
 #page-title{
-  .image{
-      background: url("../images/activity-title.png") no-repeat scroll right center transparent;
-  }
-  .title{
-    padding-right: 195px;
-    padding-left: 0;
+  .image .field-name-field-icon-title{
+      float: right;
+      margin: -46px 0px 0 20px;
   }
 }
 /**********  header  *********/

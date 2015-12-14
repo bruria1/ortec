@@ -88,8 +88,16 @@
       <?php print $breadcrumb; ?>
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
+
       <?php if ($title): ?>
-        <h1 class="page__title title" id="page-title"><div class="wrapper-width"><div class="image"></div><div class="title"><?php print $title; ?></div></div></h1>
+        <h1 class="page__title title" id="page-title">
+          <div class="wrapper-width">
+              <div class="image">
+                  <?php if (isset($page_banner)) : print $page_banner; endif; ?>
+              </div>
+              <div class="title"><?php print $title; ?></div>
+          </div>
+        </h1>      
       <?php endif; ?>
       <div class="wrapper-width">
         <?php print render($title_suffix); ?>
